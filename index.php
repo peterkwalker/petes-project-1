@@ -24,11 +24,11 @@ header("Location: index.php");
 ?>
 
 
+<!-- DataTables -->
 
-
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
 
 <?php require ('classes/queries/common.php');?>
 
@@ -100,7 +100,8 @@ header("Location: index.php");
 
 
     <script src="//code.jquery.com/jquery-3.3.1.js"></script>
-    
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
     <script>
         $(document).ready( function () {
@@ -114,7 +115,6 @@ header("Location: index.php");
 
 
     </script>
-
 
 
 	

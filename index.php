@@ -38,10 +38,16 @@ header("Location: index.php");
         <div class="col-md-12">
 
             <div class="alert alert-primary" role="alert" style="margin-top: 40px;">
-                <h1>This is a web page</h1>
+                <h1>Names and E-mail</h1>
             </div>
 
-            <table class="table table-striped table-bordered" style="width:100%" id="myTable">
+        </div>
+    </div>
+
+    <div class="row" id="record-display">
+        <div class="col-md-12">
+
+            <table class="table table-striped table-bordered" style="width:100%" id="record-table">
              <thead>
                <tr>
                   <th>Name</th>
@@ -84,8 +90,11 @@ header("Location: index.php");
     </div>
 
     <div class="row" style="margin-top: 20px;">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <button type="submit" class="btn btn-sm btn-success btn-block">Save</button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-sm btn-danger btn-block" id="cancel-button">Cancel</button>
         </div>
     </div>
 
@@ -105,12 +114,20 @@ header("Location: index.php");
 
     <script>
         $(document).ready( function () {
-            $('#myTable').DataTable();
+            $('#record-table').DataTable();
             $("#add-record").hide();
         } );
 
         $("#add-record-button").click(function(){
             $("#add-record").fadeIn();
+            $("#record-display").hide();
+
+
+        });
+
+        $("#cancel-button").click(function(){
+            $("#add-record").hide();
+            $("#record-display").fadeIn();
         });
 
 

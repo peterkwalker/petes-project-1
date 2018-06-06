@@ -25,10 +25,10 @@ header("Location: index.php");
 
 
 <!-- DataTables -->
-
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 <?php require ('classes/queries/common.php');?>
 
@@ -52,6 +52,7 @@ header("Location: index.php");
                <tr>
                   <th>Name</th>
                   <th>Email</th>
+                   <th></th>
                </tr>
             </thead>
         <tbody>
@@ -59,6 +60,7 @@ header("Location: index.php");
             <tr>
                 <td><?php echo $row['name']?></td>
                 <td><?php echo $row['email']?></td>
+                <td><i class="fas fa-edit float-right" style="cursor: pointer;"></i></td>
             </tr>
         <?php } ?>
         </tbody>
@@ -114,7 +116,6 @@ header("Location: index.php");
 
     <script>
         $(document).ready( function () {
-            $('#record-table').DataTable();
             $("#add-record").hide();
         } );
 
@@ -130,6 +131,17 @@ header("Location: index.php");
             $("#record-display").fadeIn();
         });
 
+        oTable = $('#record-table').dataTable( {
+            colReorder: true,
+            responsive: true,
+            "aaSorting": [[ 0, "asc" ]],
+            "iDisplayLength": 50,
+            "aoColumns" : [
+                { "": "" },
+                { "": "" },
+                { "": "", "bSortable": false }
+            ]
+        } );
 
     </script>
 
